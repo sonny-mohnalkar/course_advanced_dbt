@@ -1,0 +1,35 @@
+models:
+  - name: fct_events
+    description: This is the fact events madel
+
+    columns:
+
+      - name: session_id
+        description: This is the session ID
+        meta:
+          priority: high
+        data_tests:
+          - not_null
+
+      - name: user_id
+        description: '{{ doc("bingeflix_column_user_id") }}'
+        meta:
+          priority: high
+        data_tests:
+          - not_null
+
+      - name: created_at
+        description: When the event was created.
+        data_tests:
+          - not_null
+
+      - name: event_name
+        description: Name of the event
+        data_tests:
+          - not_null
+
+      - name: event_id
+        description: ID of the event
+        data_tests:
+          - not_null
+          - unique
